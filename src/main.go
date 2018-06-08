@@ -12,7 +12,6 @@ import (
 	"runtime"
 
 	log "github.com/Sirupsen/logrus"
-	"github.com/shawn1m/overture/core"
 )
 
 // For auto version building
@@ -49,10 +48,9 @@ func main() {
 		}
 	}
 
-	log.Info("Overture " + version)
-	log.Info("If you need any help, please visit the project repository: https://github.com/shawn1m/overture")
+	log.Info("octodns is starting" + version)
 
 	runtime.GOMAXPROCS(processorNumber)
 
-	core.InitServer(configPath)
+	InitServer(configPath)
 }

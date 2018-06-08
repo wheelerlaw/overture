@@ -1,4 +1,4 @@
-Source: overture
+Source: octodns
 Section: net
 Priority: optional
 Maintainer: Simon Shi <simonsmh@gmail.com>
@@ -10,19 +10,19 @@ Build-Depends: debhelper (>= 10),
                golang-golang-x-net-dev,
                golang-logrus-dev
 Standards-Version: 4.1.1
-Homepage: https://github.com/shawn1m/overture
-Vcs-Browser: https://github.com/shawn1m/overture.git
-Vcs-Git: https://github.com/shawn1m/overture.git
-XS-Go-Import-Path: github.com/shawn1m/overture
+Homepage: https://github.com/shawn1m/octodns
+Vcs-Browser: https://github.com/shawn1m/octodns.git
+Vcs-Git: https://github.com/shawn1m/octodns.git
+XS-Go-Import-Path: github.com/shawn1m/octodns
 Testsuite: autopkgtest-pkg-go
 
-Package: overture
+Package: octodns
 Architecture: any
 Built-Using: ${misc:Built-Using}
 Depends: ${shlibs:Depends},
          ${misc:Depends},
          lsb-base
 Description: DNS server/forwarder/dispatcher written in Go
- Overture means an orchestral piece at the beginning of a classical music
+ octodns means an orchestral piece at the beginning of a classical music
  composition, just like DNS which is nearly the first step of surfing
  the Internet.

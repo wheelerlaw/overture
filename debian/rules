@@ -1,13 +1,13 @@
 #!/usr/bin/make -f
 
-export DH_GOPKG := github.com/shawn1m/overture
+export DH_GOPKG := github.com/shawn1m/octodns
 
 export GOPATH := $(CURDIR)/obj-$(shell dpkg-architecture -qDEB_HOST_MULTIARCH)
 
 override_dh_auto_test:
 
 override_dh_auto_install:
-	mv $(GOPATH)/bin/main $(GOPATH)/bin/overture
+	mv $(GOPATH)/bin/main $(GOPATH)/bin/octodns
 	dh_auto_install
 	
 %:

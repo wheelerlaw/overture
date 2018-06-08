@@ -3,7 +3,7 @@
 // found in the LICENSE file.
 
 // Package cache implements dns cache feature with edns-client-subnet support.
-package cache
+package main
 
 // Cache that holds RRs.
 
@@ -35,7 +35,7 @@ type Cache struct {
 // New returns a new cache with the capacity and the ttl specified.
 func New(capacity int) *Cache {
 	if capacity <= 0 {
-		return nil
+		//return nil
 	}
 	c := new(Cache)
 	c.table = make(map[string]*elem)
@@ -71,12 +71,22 @@ func (c *Cache) EvictRandom() {
 // InsertMessage inserts a message in the Cache. We will cache it for ttl seconds, which
 // should be a small (60...300) integer.
 func (c *Cache) InsertMessage(s string, m *dns.Msg) {
-	if c.capacity <= 0 || m == nil || len(m.Answer) == 0 {
+	if c.capacity <= 0 || m == nil || !(len(m.Answer) > 0 || len(m.Ns) > 0){
 		return
 	}
 
 	c.Lock()
-	ttl := time.Duration(m.Answer[0].Header().Ttl) * time.Second
+	ttl := time.Duration(0)
+	if len(m.Answer) > 0 {
+		ttl = time.Duration(m.Answer[0].Header().Ttl) * time.Second
+	}else if len(m.Ns) > 0 {
+		ttl = time.Duration(m.Ns[0].Header().Ttl) * time.Second
+	}
+
+	if ttl == 0 {
+		return
+	}
+
 	if _, ok := c.table[s]; !ok {
 		c.table[s] = &elem{time.Now().UTC().Add(ttl), m.Copy()}
 	}
@@ -102,8 +112,8 @@ func (c *Cache) Search(s string) (*dns.Msg, time.Time, bool) {
 }
 
 // Key creates a hash key from a question section.
-func Key(q dns.Question, ednsIP string) string {
-	return q.Name + " " + strconv.Itoa(int(q.Qtype)) + " " + ednsIP
+func Key(q dns.Question) string {
+	return q.Name + " " + strconv.Itoa(int(q.Qtype))
 }
 
 // Hit returns a dns message from the cache. If the message's TTL is expired nil
