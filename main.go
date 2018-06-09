@@ -12,6 +12,7 @@ import (
 	"runtime"
 
 	log "github.com/Sirupsen/logrus"
+	"github.com/wheelerlaw/octodns/core"
 )
 
 // For auto version building
@@ -52,5 +53,5 @@ func main() {
 
 	runtime.GOMAXPROCS(processorNumber)
 
-	InitServer(configPath)
+	core.InitServer(configPath)
 }

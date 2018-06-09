@@ -3,7 +3,7 @@
 // found in the LICENSE file.
 
 // Package core implements the essential features.
-package main
+package core
 
 // Initiate the server with config file
 func InitServer(configFilePath string) {

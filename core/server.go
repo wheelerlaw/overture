@@ -1,5 +1,5 @@
 // Package inbound implements dns server for inbound connection.
-package main
+package core
 
 import (
 	"os"

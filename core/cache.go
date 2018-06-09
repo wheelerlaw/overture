@@ -3,7 +3,7 @@
 // found in the LICENSE file.
 
 // Package cache implements dns cache feature with edns-client-subnet support.
-package main
+package core
 
 // Cache that holds RRs.
 
