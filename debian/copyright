@@ -1,6 +1,6 @@
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
-Upstream-Name: overture
-Source: https://github.com/shawn1m/overture
+Upstream-Name: octodns
+Source: https://github.com/shawn1m/octodns
 Files-Excluded: vendor Godeps/_workspace
 
 Files: *

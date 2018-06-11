@@ -1,2 +1,2 @@
-debian/config.json etc/overture
-debian/overture.service lib/systemd/system
+debian/config.json etc/octodns
+debian/octodns.service lib/systemd/system

@@ -1,11 +1,11 @@
-# overture
-[![Build Status](https://travis-ci.org/shawn1m/overture.svg)](https://travis-ci.org/shawn1m/overture)
-[![GoDoc](https://godoc.org/github.com/shawn1m/overture?status.svg)](https://godoc.org/github.com/shawn1m/overture)
-[![Go Report Card](https://goreportcard.com/badge/github.com/shawn1m/overture)](https://goreportcard.com/report/github.com/shawn1m/overture)
+# octodns
+[![Build Status](https://travis-ci.org/shawn1m/octodns.svg)](https://travis-ci.org/shawn1m/octodns)
+[![GoDoc](https://godoc.org/github.com/shawn1m/octodns?status.svg)](https://godoc.org/github.com/shawn1m/octodns)
+[![Go Report Card](https://goreportcard.com/badge/github.com/shawn1m/octodns)](https://goreportcard.com/report/github.com/shawn1m/octodns)
 
-Overture is a DNS server/forwarder/dispatcher written in Go.
+octodns is a DNS server/forwarder/dispatcher written in Go.
 
-Overture means an orchestral piece at the beginning of a classical music composition, just like DNS which is nearly the
+octodns means an orchestral piece at the beginning of a classical music composition, just like DNS which is nearly the
 first step of surfing the Internet.
 
 **Please note: If you are using the binary releases, please follow the instructions in the README file with
@@ -29,47 +29,47 @@ corresponding git version tag. The README in master branch are subject to change
 
 ### Dispatch process
 
-Overture forces IPv6 and custom domain DNS queries to use alternative DNS when applicable.
+octodns forces IPv6 and custom domain DNS queries to use alternative DNS when applicable.
 
-As for custom IP network, overture will first query the domain with primary DNS, if the answer is empty or the IP
-is not matched then overture will query the alternative DNS servers and use their answer instead.
+As for custom IP network, octodns will first query the domain with primary DNS, if the answer is empty or the IP
+is not matched then octodns will query the alternative DNS servers and use their answer instead.
 
 ## Installation
 
-You can download binary releases from the [release](https://github.com/shawn1m/overture/releases).
+You can download binary releases from the [release](https://github.com/shawn1m/octodns/releases).
 
-For ArchLinux users, package `overture` is available in AUR. If you use a AUR helper i.e. `yaourt`, you can simply run:
+For ArchLinux users, package `octodns` is available in AUR. If you use a AUR helper i.e. `yaourt`, you can simply run:
 
-    yaourt -S overture
+    yaourt -S octodns
 
-For mips users, please assure the kernel FPU emulation is enabled, check [#32](https://github.com/shawn1m/overture/issues/32) [#26](https://github.com/shawn1m/overture/issues/26) [golang/go#18880](https://github.com/golang/go/issues/18880) for details.
+For mips users, please assure the kernel FPU emulation is enabled, check [#32](https://github.com/shawn1m/octodns/issues/32) [#26](https://github.com/shawn1m/octodns/issues/26) [golang/go#18880](https://github.com/golang/go/issues/18880) for details.
 
 ## Usages
 
 Start with the default config file -> ./config.json
 
-    $ ./overture
+    $ ./octodns
 
 Or use your own config file:
 
-    $ ./overture -c /path/to/config.json
+    $ ./octodns -c /path/to/config.json
 
 Verbose mode:
 
-    $ ./overture -v
+    $ ./octodns -v
 
 Log to file:
 
-    $ ./overture -l /path/to/overture.log
+    $ ./octodns -l /path/to/octodns.log
 
 For other options, please see help:
 
-    $ ./overture -h
+    $ ./octodns -h
 
 Tips:
 
 + Root privilege is required if you are listening on port 53.
-+ For Windows users, you can run overture on command prompt instead of double click.
++ For Windows users, you can run octodns on command prompt instead of double click.
 
 ###  Configuration Syntax
 
@@ -119,8 +119,8 @@ Configuration file is "config.json" by default:
 
 Tips:
 
-+ BindAddress: Specifying only port (e.g. `:53`) will have overture listen on all available addresses (both IPv4 and
-IPv6). Overture will handle both TCP and UDP requests. Literal IPv6 addresses are enclosed in square brackets (e.g. `[2001:4860:4860::8888]:53`)
++ BindAddress: Specifying only port (e.g. `:53`) will have octodns listen on all available addresses (both IPv4 and
+IPv6). octodns will handle both TCP and UDP requests. Literal IPv6 addresses are enclosed in square brackets (e.g. `[2001:4860:4860::8888]:53`)
 + DNS: You can specify multiple DNS upstream servers here.
     + Name: This field is only used for logging.
     + Address: Same as BindAddress.

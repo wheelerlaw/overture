@@ -5,35 +5,17 @@
 // Package core implements the essential features.
 package core
 
-import (
-	"github.com/shawn1m/overture/core/config"
-	"github.com/shawn1m/overture/core/inbound"
-	"github.com/shawn1m/overture/core/outbound"
-)
-
 // Initiate the server with config file
 func InitServer(configFilePath string) {
 
-	config := config.NewConfig(configFilePath)
+	config := NewConfig(configFilePath)
 
-	// New dispatcher without ClientBundle, ClientBundle must be initiated when server is running
-	d := outbound.Dispatcher{
-		PrimaryDNS:         config.PrimaryDNS,
-		AlternativeDNS:     config.AlternativeDNS,
-		OnlyPrimaryDNS:     config.OnlyPrimaryDNS,
-		IPNetworkList:      config.IPNetworkList,
-		DomainList:         config.DomainList,
-		DomainWhiteList:    config.DomainWhiteList,
-		RedirectIPv6Record: config.RedirectIPv6Record,
-		Hosts:              config.Hosts,
-		Cache:              config.Cache,
-	}
 
-	s := &inbound.Server{
+	s := &Server{
 		BindAddress: config.BindAddress,
-		Dispatcher:  d,
-		MinimumTTL:  config.MinimumTTL,
-		RejectQtype: config.RejectQtype,
+		Protocols:   config.Protocols,
+		Cache:       config.Cache,
+		Forwarders:  config.Forwarders,
 	}
 
 	s.Run()
