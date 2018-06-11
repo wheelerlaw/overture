@@ -1,34 +1,36 @@
 language: go
 go:
-  - 1.10.x
+- 1.10.x
 addons:
   apt:
     packages:
-      - python3
+    - python3
 script:
-  - "python3 ./build.py -ib"
-  - "go test -v ./..."
+- python3 ./build.py -ib
+- go test -v ./...
 before_deploy:
-  - "go version"
-  - "ls -al"
-  - "python3 ./build.py -id"
+- go version
+- ls -al
+- python3 ./build.py -id
 deploy:
   provider: releases
   api_key:
-    secure: "JH5dTK6/eC4mEpgdQ8QUO5glIcFZFjoEvoav88d3hZciYEpc9HA6WU01E4yDcjnSNP5m1aS3O6Ttcmhlzkcop7SdoFlAP+TgQsRX1ddFE3XkDdCQiFeXSTPU25Fn7iD3lS/OQpZ/Si28dxYSbO0A2xEPeSGkPZ7YVtNIm0gonCro/2yGxtiLmFf8+ajiDX5wpnuAn427pwtMOe8ZUh27Y/1uWPVscVErqOKn6xhH9Cy2YyfwO6dGp1k8by9T4LF4d/w2f8QidmjxCGVU0wfngZUS6NTdCjk9GlspDDvg7/OaSkBT6ld8d+ITvXrAssOH6VhdnNG62JdwNJDfHbsqLMYKRRo871tQR3+/KebImG0Zc9KeLIlyhEirHDWK8U8kJ1F5hLDVJPFNCi6JzAfTgJ2Rll14CyRW33P3Cd5AIylGEXj67Hcv3iFVk98WyYmcSxbhYdTJGJ5po2GhFFDp4RzIwuLU68W5rtMEiKu8xjJQFyv8NE3kHAcLQzIUQs6QxdeJRmzpJdNsXfCsAdQqTLYtQ7s9rAwGM8HPGtE2TopaH6C3ZsZI6ik4cOp5lf3naop7UsNv+Ojk03N+j1GI0pNRpz6IeCPrXrnYY6x9fo0FnoSIPyLh8EHLttq7SzVDc1cDl7jhnXxQF33usQyXnZxM/ytrtk5VgIGRgl5blO0="
+    secure: $GITHUB_TOKEN
   file:
-    - overture-darwin-amd64.zip
-    - overture-linux-386.zip
-    - overture-linux-amd64.zip
-    - overture-linux-arm.zip
-    - overture-linux-arm64.zip
-    - overture-linux-mips-softfloat.zip
-    - overture-linux-mips-hardfloat.zip
-    - overture-linux-mipsle.zip
-    - overture-linux-mips64.zip
-    - overture-linux-mips64le.zip
-    - overture-windows-386.zip
-    - overture-windows-amd64.zip
+  - overture-darwin-amd64.zip
+  - overture-linux-386.zip
+  - overture-linux-amd64.zip
+  - overture-linux-arm.zip
+  - overture-linux-arm64.zip
+  - overture-linux-mips-softfloat.zip
+  - overture-linux-mips-hardfloat.zip
+  - overture-linux-mipsle.zip
+  - overture-linux-mips64.zip
+  - overture-linux-mips64le.zip
+  - overture-windows-386.zip
+  - overture-windows-amd64.zip
   skip_cleanup: true
   on:
     tags: true
+env:
+  secure: Ykn1NLaRCNnqvcC5c5vFE57vZ0gKeKXkMlI9aTxz65RwsyT6DkSCGQavfHkhvWUydLcid7/cwb2U/nUVSIIJYRgHlObNuUJ7RXT4xDwtypx7SK6w12W9twEcHm68MpY2lhCw+4o71VBYjfSNeNXVrH0Qsyy2YGkV/z5ZYlfIv6JPHkQqguNWz23pgNtiL8symeqdAovvfh6JXOPj5Izbf/aSWCq+Q0KGyqDf20WODOQIlPRN524jvbIkmQcBlJ/bFw7w4hF4PdUU/oLQKS91gSzLNoOrhSi3L9USZK0pguVJxixFq+VhAU4+8NtqihbzbcUSrCqBbYOcsCrC/jIqXwKWyNN8gLuB3a98OrTbZ1miEXPFVtjCbFeegoA/6QtZZveJuw08XGX+GjJFz6a6xcywOTbvWZAH50ceW7dMZkqyfbiEinuOaPi/lhNRbPFNa6D5grdIeSropPxZuNwwUjh1ipmc4dvbkr3vjC7lv1ItNw98vqRe5dDMm1L6gbhMil2uSI9NYdgothZ0tIWHMcHXaO0HDH8uQVhWBW6eXOBDZ8yR+iDxVKdV3eKyWJPvDm9l6SdoSm+1SpLYsjnjGkIXER+Cw9lYzdNUk/cUc74SVn3v+ELgyvct0lYfbqTOTexb7dI2KzapjpQzauBp+nNr/KEI6JR3XRk9aSmacBw=
