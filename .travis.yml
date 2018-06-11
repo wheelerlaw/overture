@@ -1,21 +1,19 @@
 language: go
 go:
 - 1.10.x
+branches: 
+  only:
+    - master
 addons:
   apt:
     packages:
     - python3
 script:
-- python3 ./build.py -ib
+- python3 ./build.py build
 - go test -v ./...
-before_deploy:
-- go version
-- ls -al
-- python3 ./build.py -id
 deploy:
   provider: releases
-  api_key:
-    secure: $GITHUB_TOKEN
+  api_key: $GITHUB_TOKEN
   file:
   - overture-darwin-amd64.zip
   - overture-linux-386.zip
