@@ -1,4 +1,5 @@
 venv
+debian/debhelper-build-stamp
 
 # Created by .ignore support plugin (hsz.mobi)
 ### Go template
@@ -41,6 +42,6 @@ vendor/
 *_sample
 *_temp
 
-overture-*
+octodns-*
 *.log
 .idea
