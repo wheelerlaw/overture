@@ -1,6 +1,6 @@
 #!/usr/bin/make -f
 
-export DH_GOPKG := github.com/shawn1m/octodns
+export DH_GOPKG := github.com/wheelerlaw/octodns
 
 export GOPATH := $(CURDIR)/obj-$(shell dpkg-architecture -qDEB_HOST_MULTIARCH)
 

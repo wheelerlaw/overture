@@ -1,8 +1,8 @@
 Source: octodns
 Section: net
 Priority: optional
-Maintainer: Simon Shi <simonsmh@gmail.com>
-Uploaders: Simon Shi <simonsmh@gmail.com>
+Maintainer: Wheeler Law <whelderwheels613@gmail.com>
+Uploaders: Wheeler Law <whelderwheels613@gmail.com>
 Build-Depends: debhelper (>= 10),
                dh-golang,
                golang-any,
@@ -10,10 +10,10 @@ Build-Depends: debhelper (>= 10),
                golang-golang-x-net-dev,
                golang-logrus-dev
 Standards-Version: 4.1.1
-Homepage: https://github.com/shawn1m/octodns
-Vcs-Browser: https://github.com/shawn1m/octodns.git
-Vcs-Git: https://github.com/shawn1m/octodns.git
-XS-Go-Import-Path: github.com/shawn1m/octodns
+Homepage: https://github.com/wheelerlaw/octodns
+Vcs-Browser: https://github.com/wheelerlaw/octodns.git
+Vcs-Git: https://github.com/wheelerlaw/octodns.git
+XS-Go-Import-Path: github.com/wheelerlaw/octodns
 Testsuite: autopkgtest-pkg-go
 
 Package: octodns
@@ -22,7 +22,4 @@ Built-Using: ${misc:Built-Using}
 Depends: ${shlibs:Depends},
          ${misc:Depends},
          lsb-base
-Description: DNS server/forwarder/dispatcher written in Go
- octodns means an orchestral piece at the beginning of a classical music
- composition, just like DNS which is nearly the first step of surfing
- the Internet.
+Description: DNS multiplexer written in Go.

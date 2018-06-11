@@ -1,14 +1,14 @@
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: octodns
-Source: https://github.com/shawn1m/octodns
+Source: https://github.com/wheelerlaw/octodns
 Files-Excluded: vendor Godeps/_workspace
 
 Files: *
-Copyright: 2016 Shawn1m <github@shawn.im>
+Copyright: 2016 wheelerlaw <whelderwheels613@gmail.com>
 License: MIT
 
 Files: debian/*
-Copyright: 2017 Simon Shi <simonsmh@gmail.com>
+Copyright: 2017 Wheeler Law <whelderwheels613@gmail.com>
 License: MIT
 Comment: Debian packaging is licensed under the same terms as upstream
 
