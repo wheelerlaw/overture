@@ -1,9 +1,9 @@
 language: go
 go:
 - 1.10.x
-branches: 
+branches:
   only:
-    - master
+  - master
 addons:
   apt:
     packages:
@@ -13,11 +13,11 @@ script:
 - go test -v ./...
 deploy:
   provider: releases
-  api_key: $GITHUB_TOKEN
+  api_key: "$GITHUB_TOKEN"
   file:
   - octodns-linux-amd64.zip
   skip_cleanup: true
   on:
     tags: true
 env:
-  secure: Ykn1NLaRCNnqvcC5c5vFE57vZ0gKeKXkMlI9aTxz65RwsyT6DkSCGQavfHkhvWUydLcid7/cwb2U/nUVSIIJYRgHlObNuUJ7RXT4xDwtypx7SK6w12W9twEcHm68MpY2lhCw+4o71VBYjfSNeNXVrH0Qsyy2YGkV/z5ZYlfIv6JPHkQqguNWz23pgNtiL8symeqdAovvfh6JXOPj5Izbf/aSWCq+Q0KGyqDf20WODOQIlPRN524jvbIkmQcBlJ/bFw7w4hF4PdUU/oLQKS91gSzLNoOrhSi3L9USZK0pguVJxixFq+VhAU4+8NtqihbzbcUSrCqBbYOcsCrC/jIqXwKWyNN8gLuB3a98OrTbZ1miEXPFVtjCbFeegoA/6QtZZveJuw08XGX+GjJFz6a6xcywOTbvWZAH50ceW7dMZkqyfbiEinuOaPi/lhNRbPFNa6D5grdIeSropPxZuNwwUjh1ipmc4dvbkr3vjC7lv1ItNw98vqRe5dDMm1L6gbhMil2uSI9NYdgothZ0tIWHMcHXaO0HDH8uQVhWBW6eXOBDZ8yR+iDxVKdV3eKyWJPvDm9l6SdoSm+1SpLYsjnjGkIXER+Cw9lYzdNUk/cUc74SVn3v+ELgyvct0lYfbqTOTexb7dI2KzapjpQzauBp+nNr/KEI6JR3XRk9aSmacBw=
+  secure: tVZK/NEWNT4EC4/F+MGGl7p3bdhnly+iWvD05h1bYW5F4Mx6LyPAHCnozxKKC2da17JzFMQ6Fg8oBJ2YFLjx4lHFauZvRjEdKqdZZ2KyUTyUxbHECzCic1Hg8wqkZQWiFPqukSWAGaUxk5pTD5WZdYyhh7E1+mhYEVwKc2sc4T1u9xBlswxTL7xAuNud2vIkr83ulUYJGbwi8zK5Fn00hsksm9lxgIEByFerYBKkZwb/a2kHQlRVAcrPRtsQztiodZrHKHtXsH0a8J4026eOD1oOJLX4KTrtxhxcTf9Es14UkgzjzGKWPwtm9ADPnU6top2Hp2EYjxTAdbIIwQr0SdsnBrziqrV2ZYciy+bIZ1KFAEEoBll6BgRClHGMAMS20dUxnMStLHkxTNnN/JVQtjo8Y6TDvyG/j++m0uVaLgoL1GHDdDR/+wX0oWPJx+rb9TX4p2Cyy4RDJAD17eO1F0HxXA7zUlaqBedowv6PkkQgzB2PbgtdF3XIkEPDiJXbd4PbHCNIoYW/KTooGaGJubzAf2p1Lm2ywZyCe79XqqRxBTDk99hAcXgVaBLd6mkKqgEo8kechrVcZlniXMwJVzviYz/PzVT6Ky/fF94CFz5lQFxAW687bM1bOn3SsZfGPIJC0/Bo3fKAmYXuR6OAWedbnixa3mJeWv5D3glfJP4=
