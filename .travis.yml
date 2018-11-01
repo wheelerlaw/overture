@@ -4,10 +4,6 @@ go:
 branches:
   only:
   - master
-addons:
-  apt:
-    packages:
-    - python3
 script:
 - make zip
 - go test -v ./...
