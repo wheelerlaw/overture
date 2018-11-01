@@ -5,7 +5,7 @@
 
 [Unit]
 Description=DNS upstream switcher written in Go in order to purify DNS records
-Documentation=https://github.com/shawn1m/octodns
+Documentation=https://github.com/wheelerlaw/octodns
 After=network.target
 
 [Service]

@@ -42,6 +42,6 @@ vendor/
 *_sample
 *_temp
 
-octodns-*
+octodns*
 *.log
 .idea
